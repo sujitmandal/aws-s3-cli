@@ -1,75 +1,36 @@
-# aws-s3-cli
-aws s3 bucket cli
+# This is a basic workflow to help you get started with Actions
 
-upload, download, check file availability, and get all available list from AWS s3 bucket.
+name: CI
 
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
-## Package Installation  : 
-```
-pip install aws-s3-cli
-```
-[Pypi Package Link](https://pypi.org/project/aws-s3-cli/)
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
 
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-## How to import the module:
-```python
-FILE_OBJ = "" # File object
-FILE_NAME = "" # File name
-S3_FILE_NAME = "" # S3 file name or uploaded file name
-BUCKET_NAME = "" # Bucket name
-AWS_ACCESS_KYE = "" # Access key ID
-AWS_SECRET_ACCESS_KYE = "" # Secret access key
-```
-## Upload File : 
-```python
-from aws_s3_cli.aws_s3_cli import upload_file
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
 
-status = upload_file(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE, FILE_OBJ, FILE_NAME)
-
-print(status)
-```
-
-## Download File : 
-```python
-from aws_s3_cli.aws_s3_cli import download_file
-
-status = download_file(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE, S3_FILE_NAME, FILE_NAME)
-
-print(status)
-```
-
-## Check File Status : 
-```python
-from aws_s3_cli.aws_s3_cli import check_file_status
-
-status = check_file_status(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE, S3_FILE_NAME)
-
-print(status)
-```
-
-## Get All File List : 
-```python
-from aws_s3_cli.aws_s3_cli import get_all_file_list
-
-file_list = get_all_file_list(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE)
-
-print(file_list)
-```
-
-
-## Required package’s:
-```
-• pip install boto3
-```
-## License:
-MIT Licensed
-
-## Author:
-Sujit Mandal
-
-[GitHub](https://github.com/sujitmandal)
-
-[PyPi](https://pypi.org/user/sujitmandal/)
-
-[LinkedIn](https://www.linkedin.com/in/sujit-mandal-91215013a/)
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
