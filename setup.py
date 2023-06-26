@@ -10,7 +10,7 @@ def readme():
 
 setup(
     name = 'aws-s3-cli',
-    version = '0.0.1',
+    version = '0.0.2',
     description = "upload, download, check file availability, and get all available list from AWS s3 bucket.",
     long_description = readme(),
     long_description_content_type = 'text/markdown',
@@ -30,6 +30,10 @@ setup(
         'Programming Language :: Python :: 3.10',
     ],
 
+    install_requires=[
+        'boto3',
+    ],
+    
     packages = ['aws_s3_cli'],
     include_package_data = True,
 )

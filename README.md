@@ -1,7 +1,15 @@
 # aws-s3-cli
+## Scrape Search Engine :
+[![Downloads](https://static.pepy.tech/badge/aws-s3-cli)](https://pepy.tech/project/aws-s3-cli)[![GitHub license](https://img.shields.io/github/license/sujitmandal/aws-s3-cli)](https://github.com/sujitmandal/aws-s3-cli/blob/master/LICENSE) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/aws-s3-cli) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/aws-s3-cli) ![PyPI](https://img.shields.io/pypi/v/aws-s3-cli) 
+
+
+
+
 aws s3 bucket cli
 
 upload, download, check file availability, and get all available list from AWS s3 bucket.
+
+
 
 
 
