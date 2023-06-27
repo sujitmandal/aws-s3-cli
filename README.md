@@ -1,5 +1,5 @@
 ## aws-s3-cli :
-[![Downloads](https://static.pepy.tech/personalized-badge/aws-s3-cli?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/aws-s3-cli)[![GitHub license](https://img.shields.io/github/license/sujitmandal/aws-s3-cli)](https://github.com/sujitmandal/aws-s3-cli/blob/master/LICENSE) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/aws-s3-cli) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/aws-s3-cli) ![PyPI](https://img.shields.io/pypi/v/aws-s3-cli) 
+[![Downloads](https://static.pepy.tech/personalized-badge/aws-s3-cli?period=total&units=international_system&left_color=black&right_color=blue&left_text=Downloads)](https://pepy.tech/project/aws-s3-cli)[![GitHub license](https://img.shields.io/github/license/sujitmandal/aws-s3-cli)](https://github.com/sujitmandal/aws-s3-cli/blob/master/LICENSE) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/aws-s3-cli) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/aws-s3-cli) ![PyPI](https://img.shields.io/pypi/v/aws-s3-cli) 
 
 
 ```
