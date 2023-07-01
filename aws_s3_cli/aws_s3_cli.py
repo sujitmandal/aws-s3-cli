@@ -123,15 +123,15 @@ def get_all_file_list(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE):
       
       upload_file_info.append([bucket_name, file_name])
 
-    file_name_list = []
+    file_list = []
     if len(upload_file_info) != 0:
       for file_name_list in upload_file_info:
         bucket_name = file_name_list[0]
         file_name =file_name_list[1]
 
-        file_name_list.append(file_name)
+        file_list.append(file_name)
     
-    return(file_name_list)
+    return(file_list)
 
 def check_file_status(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE, S3_FILE_NAME):
     s3bucket = boto3.resource('s3',
