@@ -61,6 +61,15 @@ file_list = get_all_file_list(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE
 print(file_list)
 ```
 
+## Get All File Dictionary : 
+```python
+from aws_s3_cli.aws_s3_cli import get_all_file_dict
+
+file_dict = get_all_file_dict(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE)
+
+print(file_dict)
+```
+
 
 ## Required package’s:
 ```

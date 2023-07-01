@@ -75,7 +75,7 @@ def download_file(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE, S3_FILE_NA
     return(status)
 
 
-def get_all_file_list(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE):
+def get_all_file_dict(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE):
     s3bucket = boto3.resource('s3',
                     aws_access_key_id=AWS_ACCESS_KYE,
                 aws_secret_access_key=AWS_SECRET_ACCESS_KYE
@@ -107,6 +107,31 @@ def get_all_file_list(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE):
 
 
     return(file_name_dict)
+
+
+def get_all_file_list(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE):
+    s3bucket = boto3.resource('s3',
+                    aws_access_key_id=AWS_ACCESS_KYE,
+                aws_secret_access_key=AWS_SECRET_ACCESS_KYE
+                )
+    bucket = s3bucket.Bucket(BUCKET_NAME)
+
+    upload_file_info = []
+    for obj in bucket.objects.all():
+      bucket_name = obj.bucket_name
+      file_name = obj.key
+      
+      upload_file_info.append([bucket_name, file_name])
+
+    file_name_list = []
+    if len(upload_file_info) != 0:
+      for file_name_list in upload_file_info:
+        bucket_name = file_name_list[0]
+        file_name =file_name_list[1]
+
+        file_name_list.append(file_name)
+    
+    return(file_name_list)
 
 def check_file_status(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE, S3_FILE_NAME):
     s3bucket = boto3.resource('s3',
@@ -142,6 +167,7 @@ if __name__ == '__main__':
   AWS_ACCESS_KYE = ""
   AWS_SECRET_ACCESS_KYE = ""
 
+  get_all_file_dict(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE)
   get_all_file_list(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE)
   check_file_status(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE, S3_FILE_NAME)
   download_file(BUCKET_NAME, AWS_ACCESS_KYE, AWS_SECRET_ACCESS_KYE, S3_FILE_NAME, FILE_NAME)
